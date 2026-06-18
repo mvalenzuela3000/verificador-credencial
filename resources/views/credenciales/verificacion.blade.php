@@ -311,6 +311,7 @@
     $cargo = $persona->cargo ?? '';
     $area = $persona->area ?? '';
     $puesto = $persona->puesto ?? '';
+    $oficina=$persona->oficina ?? '';
     $imagen = $persona->imagen ?: asset('img/credenciales/sin-foto.png');
 @endphp
 
@@ -345,13 +346,14 @@
             </div>
 
             <div class="hashtag">
-                #Siempre Bolivia
+                #Siempre <strong>Bolivia</strong>
             </div>
 
             <div class="franja">
                 <div class="cargo">
                     <h2>{{ $puesto ?: $cargo }}</h2>
                     <p>{{ $area }}</p>
+                    <p>{{ $oficina }}</p>
                 </div>
 
                 <div class="ministerio">
