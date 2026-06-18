@@ -70,19 +70,30 @@
             position: relative;
             z-index: 2;
             min-height: 610px;
+            padding-bottom: 190px;
         }
 
         .logos {
             position: absolute;
             top: 58px;
             right: 45px;
+            left: auto;
+            width: 420px;
             display: flex;
+            justify-content: flex-end;
             align-items: center;
-            gap: 18px;
+            gap: 12px;
         }
 
-        .logos img {
-            height: 78px;
+        .logos img:first-child {
+            height: 62px;
+            width: auto;
+        }
+
+        .logos img:last-child {
+            height: 62px;
+            width: auto !important;
+            max-width: 310px;
             object-fit: contain;
         }
 
@@ -108,7 +119,7 @@
 
         .ci {
             position: absolute;
-            top: 390px;
+            top: 370px;
             left: 116px;
             width: 292px;
             height: 53px;
@@ -121,14 +132,16 @@
             align-items: center;
             justify-content: center;
             letter-spacing: .5px;
+            z-index: 5;
         }
 
         .datos {
             position: absolute;
-            top: 275px;
+            top: 270px;
             right: 55px;
             width: 470px;
             text-align: right;
+            z-index: 4;
         }
 
         .nombre {
@@ -149,9 +162,10 @@
         .hashtag {
             position: absolute;
             right: 80px;
-            top: 448px;
+            top: 415px;
             font-size: 15px;
             color: #555;
+            z-index: 4;
         }
 
         .franja {
@@ -159,29 +173,36 @@
             left: 0;
             right: 0;
             bottom: 18px;
-            height: 110px;
+            height: 145px;
+            min-height: unset;
             background: #4a4a4a;
             color: #fff;
             display: grid;
             grid-template-columns: 58% 42%;
             align-items: center;
+            padding: 14px 25px 18px 25px;
+            z-index: 3;
         }
 
         .franja .cargo {
             text-align: center;
-            padding-left: 25px;
+            padding: 0 15px;
+            max-height: 130px;
+            overflow: hidden;
         }
 
         .franja .cargo h2 {
-            margin: 0 0 4px 0;
-            font-size: 27px;
+            margin: 0 0 6px 0;
+            font-size: clamp(18px, 2.1vw, 26px);
+            line-height: 1.08;
             font-weight: 800;
             text-transform: uppercase;
         }
 
         .franja .cargo p {
-            margin: 0;
-            font-size: 21px;
+            margin: 0 0 2px 0;
+            font-size: clamp(13px, 1.45vw, 19px);
+            line-height: 1.08;
             font-weight: 700;
             text-transform: uppercase;
         }
@@ -211,67 +232,93 @@
         }
 
         @media (max-width: 768px) {
-            .credencial {
-                max-width: 420px;
-                min-height: 720px;
+
+            .page {
+                align-items: flex-start;
+                padding: 8px;
             }
 
-            .credencial::before {
-                background-size: cover;
+            .credencial {
+                max-width: 420px;
+                min-height: auto;
             }
 
             .contenido {
-                min-height: 720px;
+                min-height: auto;
+                padding: 95px 16px 0 16px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .verificado {
+                top: 22px;
+                left: 22px;
+                z-index: 5;
+                font-size: 13px;
+                padding: 8px 14px;
             }
 
             .logos {
-                position: absolute;
-                top: 35px;
-                right: 35px;
-                display: flex;
-                justify-content: flex-end;
-                align-items: center;
-                gap: 12px;
-                width: auto;
+                top: 34px;
+                right: 18px;
                 left: auto;
+                width: 260px;
+                justify-content: flex-end;
+                gap: 5px;
             }
 
-            .logos img {
-                height: 65px;
-                width: auto;
-                object-fit: contain;
+            .logos img:first-child {
+                height: 42px;
+            }
+
+            .logos img:last-child {
+                height: 42px;
+                max-width: 205px;
             }
 
             .foto {
-                top: 120px;
-                left: 50%;
-                transform: translateX(-50%);
+                position: relative;
+                top: auto;
+                left: auto;
+                transform: none;
                 width: 245px;
                 height: 235px;
+                margin-top: 25px;
             }
 
             .ci {
-                top: 365px;
-                left: 50%;
-                transform: translateX(-50%);
+                position: relative;
+                top: auto;
+                left: auto;
+                transform: none;
                 width: 260px;
+                height: 50px;
+                margin-top: -12px;
                 font-size: 24px;
+                z-index: 4;
             }
 
             .datos {
-                top: 440px;
+                position: relative;
+                top: auto;
+                left: auto;
                 right: auto;
-                left: 20px;
-                width: calc(100% - 40px);
+                width: 100%;
+                margin-top: 22px;
+                margin-bottom: 24px;
                 text-align: center;
             }
 
             .nombre {
-                font-size: 25px;
+                font-size: clamp(22px, 6.5vw, 30px);
+                line-height: 1.08;
             }
 
             .cargo-principal {
-                font-size: 21px;
+                font-size: clamp(18px, 5vw, 24px);
+                line-height: 1.15;
+                margin-top: 6px;
             }
 
             .hashtag {
@@ -279,26 +326,40 @@
             }
 
             .franja {
-                height: 130px;
-                grid-template-columns: 1fr;
-                bottom: 18px;
-                padding: 10px;
+                position: relative;
+                width: calc(100% + 32px);
+                margin: 0 -16px 18px -16px;
+                min-height: 210px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 20px 18px 28px 18px;
+                background: #4a4a4a;
+                z-index: 3;
             }
 
             .franja .cargo {
+                width: 100%;
                 padding: 0;
+                max-height: none;
+                overflow: visible;
+                text-align: center;
             }
 
             .franja .cargo h2 {
-                font-size: 22px;
+                font-size: clamp(19px, 5.8vw, 26px);
+                line-height: 1.22;
+                margin: 0 0 10px 0;
             }
 
             .franja .cargo p {
-                font-size: 16px;
+                font-size: clamp(13px, 3.9vw, 18px);
+                line-height: 1.20;
+                margin: 0 0 5px 0;
             }
 
-            .ministerio img {
-                max-height: 48px;
+            .ministerio {
+                display: none;
             }
         }
     </style>
@@ -325,7 +386,7 @@
 
             <div class="logos">
                 <img src="{{ asset('img/credenciales/escudo.png') }}" alt="Escudo Bolivia">
-                <img src="{{ asset('img/credenciales/logo-ait.png') }}" width="50%" alt="AIT">
+                <img src="{{ asset('img/credenciales/logo-ait.png') }}" alt="AIT">
             </div>
 
             <div class="foto">
