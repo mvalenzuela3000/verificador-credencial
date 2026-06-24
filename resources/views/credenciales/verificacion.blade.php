@@ -401,9 +401,9 @@
                 <div class="nombre">
                     {{ $nombreCompleto }}
                 </div>
-                <div class="cargo-principal">
+                {{--<div class="cargo-principal">
                     {{ $cargo }}
-                </div>
+                </div>--}}
             </div>
 
             <div class="hashtag">
