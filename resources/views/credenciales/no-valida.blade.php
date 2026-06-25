@@ -106,7 +106,7 @@
 
         <div class="footer">
             Autoridad de Impugnación Tributaria<br>
-            Sistema de Verificación de Credenciales Institucionales
+            Sistema de Gestión de Talento Humano - Capibara
         </div>
     </div>
 </div>
